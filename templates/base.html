@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'e_voting/style.css' %}">
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h2><span class="e">E</span>-Voting</h2>
+            </div>
+    
+            <nav>
+                <ul>
+                    <li class="current"><a href="{% url 'index' %}">home</a></li>
+                    <li><a href="{% url 'display' %}">vote</a></li>
+                    <li><a href="">about</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {% block showcase %}
+    {% endblock %}
+
+    <section id="newsletter">
+        <div class="container">
+            <h2>Subscribe to our newsletter</h2>
+            <form action="">
+                <input type="email" placeholder="Enter email...">
+                <button type="submit" class="btn1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    {% block boxes %}   
+    {% endblock %}
+
+    <footer>
+        <p>copyright evoting @ 2020 </p>
+    </footer>
+</body>
+</html>

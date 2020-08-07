@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>home</title>
+{% endblock %}
+
+{% block showcase %}
+<section id="showcase2">
+    <div class="container">
+        <h1>WELCOME TO THE VOTING POLL UNIT</h1>
+        <p>YESSS!, we are in for business, pls kindly vote in your candidate. The winner woulf be announced
+            as soon as the voting is completed
+        </p>
+    </div>
+</section>
+{% endblock %}
+
+{% block boxes %}
+<section id="conts">
+    <div class="container">
+       <div id="main-col">
+            <form action="{% url 'vote' %}" method="post"></form>
+                {% csrf_token %}
+                {% for position in positions %}
+                <div id="post-col">
+                    <ul id="post">
+                        <li>
+                            <h4>{{position.name}}</h4>
+                            
+                            {% for contestant in position.contestant_set.all %}
+                                <div class="cont">
+                                    <img src="{{contestant.image.url}}" alt=""> 
+                                        <p>{{contestant.surname}} {{contestant.firstname}}</p>
+                                        <input type="radio" name="{{ position.id }}" id="">
+                                </div>
+                            {% endfor %}
+                         
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn_vote" value="vote"> vote</button>
+            </form>
+            </div>
+        
+        <aside id="right-col">
+            <h4>vote count progress</h4>
+        </aside>
+    </div>
+</section>
+{% endblock %}
+
+    

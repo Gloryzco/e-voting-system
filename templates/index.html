@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>home</title>
+{% endblock %}
+
+{% block showcase %}
+<section id="showcase">
+    <div class="container">
+        <h1>WELCOME TO THE VOTING POLL UNIT</h1>
+        <p>here, we vote for our choice to the various available SUG positions. Electronic voting 
+            system was designed by a sole administrator who deovted his time for the project
+        </p>
+    </div>
+</section>
+{% endblock %}
+
+{% block boxes %}
+<section id="boxes">
+    <div class="container">
+        <div class="box">
+            <img src="{% static 'img/box1.jpg' %}" alt="">
+            <h2>box1</h2>
+            <p>this is the first box </p>  
+        </div>
+        <div class="box">
+            <img src="{% static 'img/box2.jpg' %}" alt="">
+            <h2>box2</h2>
+            <p>this is the second box </p>  
+        </div>
+        <div class="box">
+            <img src="{% static 'img/box3.jpg' %}" alt="">
+            <h2>box3</h2>
+            <p>this is the third box </p>  
+        </div>
+
+    </div>
+</section>
+{% endblock %}
